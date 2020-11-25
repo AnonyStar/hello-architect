@@ -16,6 +16,7 @@ public class CyclicBarrierTest2 {
      */
 
     public static void main(String[] args) {
+        //公司人数
         int peopleNum = 2000;
         //每二十五个人一辆车，凑够二十五则发车~
         CyclicBarrier cyclicBarrier = new CyclicBarrier(25,() ->{

@@ -29,11 +29,6 @@ public class SemaphoreTest2 {
                 System.out.println(Thread.currentThread().getName() + "执行了");
                 count ++;
                 semaphore.release();
-//                try {
-//                    TimeUnit.MILLISECONDS.sleep(1);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
             });
         }
         service.shutdown();
