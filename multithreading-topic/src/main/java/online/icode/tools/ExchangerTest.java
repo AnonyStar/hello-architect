@@ -53,9 +53,9 @@ public class ExchangerTest {
             }
         });
         service.submit(() ->{
-            //模拟数据 线程 A的
+            //模拟数据 线程 B的
             InfoMsg infoMsg = new InfoMsg();
-            infoMsg.content="这是线程A";
+            infoMsg.content="这是线程B";
             infoMsg.id ="10001";
             infoMsg.desc = "1";
             infoMsg.message = "message";

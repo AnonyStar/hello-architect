@@ -30,12 +30,9 @@ class NodeList<T>{
 
     //头节点
     private Node<T> first;
-
     //头指针
     private Node<T> head;
-
     private int size;
-
     public NodeList(){
         size =0;
         first = new Node<T>(null,null);
