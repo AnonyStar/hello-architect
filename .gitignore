@@ -1,6 +1,5 @@
-/multithreading-topic/target/
+
 *.iml
-.idea/
 **/*.iml
-.idea/*
-.idea/libraries/*
+/.idea/
+**/target/
