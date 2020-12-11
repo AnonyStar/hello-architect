@@ -1,4 +1,4 @@
-package online.icode.leetcode;
+package online.icode.leetcode.twoSum01;
 
 import java.util.HashMap;
 import java.util.HashSet;
