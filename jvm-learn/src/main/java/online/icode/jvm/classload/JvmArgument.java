@@ -6,6 +6,9 @@ package online.icode.jvm.classload;
  */
 public class JvmArgument {
 
+    /*
+    minor GC
+     */
 
     public static void main(String[] args) {
         System.out.println("hello world");
