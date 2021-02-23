@@ -1,4 +1,4 @@
-package online.icode;
+package online.icode.redis;
 
 /**
  * Hello world!
@@ -6,11 +6,8 @@ package online.icode;
  */
 public class App 
 {
-
-
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-
     }
 }
