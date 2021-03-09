@@ -2,7 +2,7 @@ package online.icode.eshop.inventory.request;
 
 import lombok.extern.slf4j.Slf4j;
 import online.icode.eshop.inventory.model.ProductInventory;
-import online.icode.eshop.inventory.request.base.CacheRefreshRequest;
+import online.icode.eshop.inventory.core.request.CacheRefreshRequest;
 import online.icode.eshop.inventory.service.ProductInventoryService;
 
 /**

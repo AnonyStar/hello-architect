@@ -1,6 +1,6 @@
-package online.icode.eshop.inventory.service;
+package online.icode.eshop.inventory.core.service;
 
-import online.icode.eshop.inventory.request.base.Request;
+import online.icode.eshop.inventory.core.request.Request;
 
 /**
  * @author: zhoucx

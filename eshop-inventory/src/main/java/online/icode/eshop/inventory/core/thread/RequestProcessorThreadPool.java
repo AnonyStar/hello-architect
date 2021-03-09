@@ -1,7 +1,7 @@
-package online.icode.eshop.inventory.thread;
+package online.icode.eshop.inventory.core.thread;
 
-import online.icode.eshop.inventory.request.base.Request;
-import online.icode.eshop.inventory.request.base.RequestQueue;
+import online.icode.eshop.inventory.core.request.Request;
+import online.icode.eshop.inventory.core.request.RequestQueue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

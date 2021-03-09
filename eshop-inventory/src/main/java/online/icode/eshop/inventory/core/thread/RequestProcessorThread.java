@@ -1,9 +1,9 @@
-package online.icode.eshop.inventory.thread;
+package online.icode.eshop.inventory.core.thread;
 
-import online.icode.eshop.inventory.request.base.CacheRefreshRequest;
-import online.icode.eshop.inventory.request.base.DBUpdateRequest;
-import online.icode.eshop.inventory.request.base.Request;
-import online.icode.eshop.inventory.request.base.RequestQueue;
+import online.icode.eshop.inventory.core.request.CacheRefreshRequest;
+import online.icode.eshop.inventory.core.request.DBUpdateRequest;
+import online.icode.eshop.inventory.core.request.Request;
+import online.icode.eshop.inventory.core.request.RequestQueue;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;

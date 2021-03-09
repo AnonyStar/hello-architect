@@ -1,4 +1,4 @@
-package online.icode.eshop.inventory.request.base;
+package online.icode.eshop.inventory.core.request;
 
 import java.util.ArrayList;
 import java.util.List;

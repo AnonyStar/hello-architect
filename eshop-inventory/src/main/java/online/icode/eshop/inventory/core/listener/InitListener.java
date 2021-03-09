@@ -1,6 +1,6 @@
-package online.icode.eshop.inventory.listener;
+package online.icode.eshop.inventory.core.listener;
 
-import online.icode.eshop.inventory.thread.RequestProcessorThreadPool;
+import online.icode.eshop.inventory.core.thread.RequestProcessorThreadPool;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;

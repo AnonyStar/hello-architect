@@ -1,8 +1,8 @@
-package online.icode.eshop.inventory.service.impl;
+package online.icode.eshop.inventory.core.service.impl;
 
-import online.icode.eshop.inventory.request.base.Request;
-import online.icode.eshop.inventory.request.base.RequestQueue;
-import online.icode.eshop.inventory.service.RequestAsyncProcessService;
+import online.icode.eshop.inventory.core.request.Request;
+import online.icode.eshop.inventory.core.request.RequestQueue;
+import online.icode.eshop.inventory.core.service.RequestAsyncProcessService;
 import org.springframework.stereotype.Service;
 
 /**
