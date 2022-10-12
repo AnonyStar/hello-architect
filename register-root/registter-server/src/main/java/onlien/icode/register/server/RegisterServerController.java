@@ -2,7 +2,7 @@ package onlien.icode.register.server;
 
 public class RegisterServerController {
 
-    private Registry registry = Registry.getInstance();
+    private ServiceRegistry registry = ServiceRegistry.getInstance();
 
     /**
      * 服务注册.
@@ -41,6 +41,10 @@ public class RegisterServerController {
             ServiceInstance serviceInstance =  registry.getServiceInstance(heartbeatRequest.getServiceInstanceId(), heartbeatRequest.getServiceName());
             //续约
             serviceInstance.renew();
+
+            //记录每分钟的心跳次数
+            HeartbeatMessuredRate.getInstance().increment();
+
             response.setStatus(HeartbeatResponse.SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,5 +52,15 @@ public class RegisterServerController {
         }
         return response;
 
+    }
+
+
+    /**
+     * 服务下线
+     * @param serviceName
+     * @param serviceInstanceId
+     */
+    public void cancel(String serviceName, String serviceInstanceId) {
+        registry.remove(serviceName, serviceInstanceId);
     }
 }

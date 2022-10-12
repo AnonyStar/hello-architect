@@ -1,10 +1,7 @@
 package online.icode.register.client;
 
-import org.apache.http.HttpRequest;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.utils.HttpClientUtils;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicHttpRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 负责发送各种http的组件.
@@ -12,6 +9,12 @@ import org.apache.http.message.BasicHttpRequest;
 public class HttpSender {
 
 
+
+    private final static String IP = "192.168.10.121";
+
+    private final static String HOSTNAME = "inventory-01";
+    private final static String SERVICENAME = "inventory-service";
+    private final static Integer PORT = 8900;
     /**
      * 注册请求.
      *
@@ -42,4 +45,37 @@ public class HttpSender {
     }
 
 
+    /**
+     * 拉取所有的注册表信息.
+     * @return
+     */
+    public Map<String, Map<String, ServiceInstance>> fetchServiceRegistry() {
+
+        Map<String, Map<String, ServiceInstance>> registry = new HashMap<>();
+
+        ServiceInstance serviceInstance = new ServiceInstance();
+        serviceInstance.setServiceInstanceId("FINANCE-SERVICE-192.168.31.207:9000");
+        serviceInstance.setIp(IP);
+        serviceInstance.setPort(PORT);
+        serviceInstance.setHostName(HOSTNAME);
+        serviceInstance.setServiceName(SERVICENAME);
+        Map<String, ServiceInstance> serviceInstanceMap = new HashMap<>();
+        serviceInstanceMap.put(serviceInstance.getServiceInstanceId(), serviceInstance);
+
+        registry.put(serviceInstance.getServiceName(), serviceInstanceMap);
+
+        return registry;
+    }
+
+    /**
+     * 服务下线.
+     * @param servicename
+     * @param serviceInstanceId
+     */
+    public void cancel(String servicename, String serviceInstanceId) {
+
+        System.out.println("服务实列下线：" + servicename + " :" + serviceInstanceId);
+
+
+    }
 }
