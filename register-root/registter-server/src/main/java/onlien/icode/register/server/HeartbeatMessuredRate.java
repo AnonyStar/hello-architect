@@ -1,6 +1,7 @@
 package onlien.icode.register.server;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.LongAdder;
 
 /**
  * 心跳计数测量器
@@ -13,7 +14,7 @@ public class HeartbeatMessuredRate {
     private static HeartbeatMessuredRate instance = new HeartbeatMessuredRate();
 
     //最近一秒的心跳次数
-    private long latestMinuteHeartbeatRate = 0L;
+    private LongAdder latestMinuteHeartbeatRate = new LongAdder();
 
     //最后一分钟的时间戳
     private long latestMinuteTimestamp = System.currentTimeMillis();
@@ -31,11 +32,11 @@ public class HeartbeatMessuredRate {
     public synchronized void increment() {
 
         if (System.currentTimeMillis() - latestMinuteTimestamp > 60 * 1000) {
-            latestMinuteHeartbeatRate = 0L;
+            latestMinuteHeartbeatRate = new LongAdder();
             latestMinuteTimestamp = System.currentTimeMillis();
         }
 
-        latestMinuteHeartbeatRate++;
+        latestMinuteHeartbeatRate.increment();
     }
 
     public static HeartbeatMessuredRate getInstance() {
@@ -45,7 +46,7 @@ public class HeartbeatMessuredRate {
 
 
     public long getLatestMinuteHeartbeatRate() {
-        return latestMinuteHeartbeatRate;
+        return latestMinuteHeartbeatRate.longValue();
     }
 
     private class Daemon extends Thread {
@@ -57,7 +58,7 @@ public class HeartbeatMessuredRate {
                     synchronized (SelfProtectionPolicy.class) {
                         long currentTimeMillis = System.currentTimeMillis();
                         if (currentTimeMillis - latestMinuteTimestamp > 60 * 1000) {
-                            latestMinuteHeartbeatRate = 0L;
+                            latestMinuteHeartbeatRate = new LongAdder();
                             latestMinuteTimestamp = System.currentTimeMillis();
                         }
                     }
